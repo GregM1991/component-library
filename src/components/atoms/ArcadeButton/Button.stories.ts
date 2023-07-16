@@ -16,27 +16,8 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
     label: "ArcadeButton",
+    onClick: () => console.log('Button clicked')
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    label: "ArcadeButton",
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: "large",
-    label: "ArcadeButton",
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "small",
-    label: "ArcadeButton",
-  },
-};
