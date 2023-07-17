@@ -11,6 +11,7 @@ const commonStyles = `
 
 export const ArcadeButtonContainer = styled.button`
   position: relative;
+  font-size: var(--step-2);
   border: none;
   background: transparent;
   padding: 0;
@@ -61,7 +62,6 @@ export const Front = styled.span<{ color?: ColorProp }>`
   justify-content: center;
   align-items: center;
   position: relative;
-  font-size: 32px;
   background: ${color?.background};
   will-change: transform;
   transform: translateY(-4px);

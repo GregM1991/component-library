@@ -1,23 +1,33 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { ArcadeButton } from ".";
+import { ArcadeButton } from "./ArcadeButton";
+import { AppWrapper } from "../../AppWrapper";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "Example/Button",
+  title: "./ArcadeButton",
   component: ArcadeButton,
   tags: ["autodocs"],
   argTypes: {},
+  decorators: [
+    (Story) => (
+      <AppWrapper>
+        <Story />
+      </AppWrapper>
+    ),
+  ]
 } satisfies Meta<typeof ArcadeButton>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof ArcadeButton>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
-  args: {
-    label: "ArcadeButton",
-    onClick: () => console.log('Button clicked')
-  },
+  render: () => <ArcadeButton label="hello" />
 };
+
+export const WithProp: Story = {
+  render: () => (
+      <ArcadeButton label="hello" />
+  ),
+}
 
