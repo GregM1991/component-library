@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ColorProp } from "./types";
 
-const commonStyles = `
+const commonStyles = css`
   top: 0;
   left: 0;
   width: 100%;
@@ -11,7 +11,7 @@ const commonStyles = `
 
 export const ArcadeButtonContainer = styled.button`
   position: relative;
-  font-size: var(--step-2);
+  font-size: var(--step--2);
   border: none;
   background: transparent;
   padding: 0;
@@ -55,17 +55,17 @@ export const Edge = styled.span`
 `;
 
 export const Front = styled.span<{ color?: ColorProp }>`
-  ${({ color }) => `
   ${commonStyles};
-  color: ${color?.text};
+  color: ${props => props.color?.text};
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background: ${color?.background};
+  background: ${props => props.color?.background};
   will-change: transform;
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  padding: var(--space-3xs-3xl);
 
   ${ArcadeButtonContainer}:hover & {
     transform: translateY(-6px);
@@ -75,5 +75,4 @@ export const Front = styled.span<{ color?: ColorProp }>`
     transform: translateY(-2px);
     transition: transform 34ms;
   }
-`}
-`;
+`
