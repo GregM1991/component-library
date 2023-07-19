@@ -37,5 +37,21 @@ export const GlobalStyle = createGlobalStyle`
     --space-3xs-3xl: clamp(0.31rem, calc(-2.19rem + 12.50vw), 7.50rem);
   }
 
+  @font-face {
+    font-family: 'ezramedium';
+    src: url('src/assets/ezra_medium-webfont.woff2') format('woff2'),
+         url('src/assets/ezra_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+      font-family: 'ezramedium_italic';
+      src: url('src/assets/ezra_mediumitalic-webfont.woff2') format('woff2'),
+          url('src/assets/ezra_mediumitalic-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
   ${STYLE_RESET}
 `;

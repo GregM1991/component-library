@@ -11,7 +11,7 @@ const commonStyles = css`
 
 export const ArcadeButtonContainer = styled.button`
   position: relative;
-  font-size: var(--step--2);
+  font-size: var(--step-0);
   border: none;
   background: transparent;
   padding: 0;
@@ -42,20 +42,27 @@ export const Shadow = styled.span`
   }
 `;
 
-export const Edge = styled.span`
+export const Edge = styled.span<{ color?: ColorProp }>`
   ${commonStyles};
+  position: absolute;
+  background: ${props => props.color?.background};
+`;
+
+export const EdgeShadow = styled.span`
+    ${commonStyles};
   position: absolute;
   background: linear-gradient(
     to left,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.2) 8%,
-    rgba(0, 0, 0, 0.2) 92%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
-`;
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 8%,
+    rgba(0, 0, 0, 0.3) 92%,
+    rgba(0, 0, 0, 0.6) 100%
+    );
+`
 
 export const Front = styled.span<{ color?: ColorProp }>`
   ${commonStyles};
+  font-family: 'ezramedium'; 
   color: ${props => props.color?.text};
   display: flex;
   justify-content: center;
@@ -65,7 +72,7 @@ export const Front = styled.span<{ color?: ColorProp }>`
   will-change: transform;
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-  padding: var(--space-3xs-3xl);
+  padding: var(--space-2xs);
 
   ${ArcadeButtonContainer}:hover & {
     transform: translateY(-6px);

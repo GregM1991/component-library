@@ -1,4 +1,10 @@
-import { ArcadeButtonContainer, Edge, Front, Shadow } from "./styles";
+import {
+  ArcadeButtonContainer,
+  Edge,
+  EdgeShadow,
+  Front,
+  Shadow,
+} from "./styles";
 import { ButtonProps } from "./types";
 
 export const ArcadeButton = ({
@@ -16,7 +22,8 @@ export const ArcadeButton = ({
       {...props}
     >
       <Shadow />
-      <Edge />
+      <Edge color={color} />
+      <EdgeShadow />
       <Front color={color}>{label}</Front>
     </ArcadeButtonContainer>
   );
