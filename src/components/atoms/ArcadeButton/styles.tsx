@@ -11,7 +11,7 @@ const commonStyles = css`
 
 export const ArcadeButtonContainer = styled.button`
   position: relative;
-  font-size: var(--step-0);
+  font-size: var(--step-Zero);
   border: none;
   background: transparent;
   padding: 0;
@@ -27,7 +27,7 @@ export const ArcadeButtonContainer = styled.button`
 export const Shadow = styled.span`
   ${commonStyles};
   position: absolute;
-  background: hsl(0deg 0% 0% / 0.10);
+  background: hsl(0deg 0% 0% / 0.1);
   will-change: transform;
   transform: translateY(6px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -43,13 +43,15 @@ export const Shadow = styled.span`
 `;
 
 export const Edge = styled.span<{ color?: ColorProp }>`
-  ${commonStyles};
-  position: absolute;
-  background: ${props => props.color?.background};
+  ${({ color }) => css`
+    ${commonStyles};
+    position: absolute;
+    background: ${color?.background};
+  `}
 `;
 
 export const EdgeShadow = styled.span`
-    ${commonStyles};
+  ${commonStyles};
   position: absolute;
   background: linear-gradient(
     to left,
@@ -57,29 +59,31 @@ export const EdgeShadow = styled.span`
     rgba(0, 0, 0, 0.3) 8%,
     rgba(0, 0, 0, 0.3) 92%,
     rgba(0, 0, 0, 0.6) 100%
-    );
-`
+  );
+`;
 
 export const Front = styled.span<{ color?: ColorProp }>`
-  ${commonStyles};
-  font-family: 'ezramedium'; 
-  color: ${props => props.color?.text};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background: ${props => props.color?.background};
-  will-change: transform;
-  transform: translateY(-4px);
-  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-  padding: var(--space-2xs);
+  ${({ color }) => css`
+    ${commonStyles};
+    font-family: "ezramedium";
+    color: ${color?.text};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: ${color?.background};
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+    padding: var(--space-2xs);
 
-  ${ArcadeButtonContainer}:hover & {
-    transform: translateY(-6px);
-    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-  }
-  ${ArcadeButtonContainer}:active & {
-    transform: translateY(-2px);
-    transition: transform 34ms;
-  }
-`
+    ${ArcadeButtonContainer}:hover & {
+      transform: translateY(-6px);
+      transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+    }
+    ${ArcadeButtonContainer}:active & {
+      transform: translateY(-2px);
+      transition: transform 34ms;
+    }
+  `}
+`;
