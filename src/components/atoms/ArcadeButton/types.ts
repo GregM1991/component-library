@@ -1,11 +1,8 @@
+export type Variant = "primary" | "secondary"
+
 export interface ButtonProps {
   label: string;
   onClick?: () => void;
-  color?: ColorProp;
+  variant?: Variant;
   className?: string;
-}
-
-export interface ColorProp {
-  background: string;
-  text: string;
 }

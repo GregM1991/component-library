@@ -11,7 +11,7 @@ const commonStyles = css`
 
 export const ArcadeButtonContainer = styled.button`
   position: relative;
-  font-size: var(--step-Zero);
+  font-size: var(--step-zero);
   border: none;
   background: transparent;
   padding: 0;
@@ -75,7 +75,7 @@ export const Front = styled.span<{ color?: ColorProp }>`
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
-    padding: var(--space-2xs);
+    padding: var(--space-xxSmall);
 
     ${ArcadeButtonContainer}:hover & {
       transform: translateY(-6px);

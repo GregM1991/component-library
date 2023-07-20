@@ -10,7 +10,7 @@ import { ButtonProps } from "./types";
 export const ArcadeButton = ({
   label,
   onClick,
-  color = { background: "#ddd", text: "#2a2a2a" },
+  variant = 'primary',
   className,
   ...props
 }: ButtonProps) => {
@@ -22,9 +22,9 @@ export const ArcadeButton = ({
       {...props}
     >
       <Shadow />
-      <Edge color={color} />
+      <Edge variant={variant} />
       <EdgeShadow />
-      <Front color={color}>{label}</Front>
+      <Front variant={variant}>{label}</Front>
     </ArcadeButtonContainer>
   );
 };
