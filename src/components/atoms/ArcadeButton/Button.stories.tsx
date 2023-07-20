@@ -3,14 +3,14 @@ import { ArcadeButton } from "./ArcadeButton";
 import { AppWrapper } from "../../AppWrapper";
 
 const steps = {
-  Minus2: '.6rem',
-  Minus1: '.8rem',
-  Zero: '1rem',
-  One: '1.2rem',
-  Two: '1.4rem',
-  Three: '1.6rem',
-  Four: '1.8rem',
-  Five: '2rem'
+  minus2: '.6rem',
+  minus1: '.8rem',
+  zero: '1rem',
+  one: '1.2rem',
+  two: '1.4rem',
+  three: '1.6rem',
+  four: '1.8rem',
+  five: '2rem'
 }
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -21,7 +21,7 @@ const meta = {
   argTypes: {},
   decorators: [
     (Story) => (
-      <AppWrapper steps={steps}>
+      <AppWrapper>
         <Story />
       </AppWrapper>
     ),
