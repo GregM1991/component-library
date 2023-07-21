@@ -6,7 +6,5 @@ export interface GlobalStyleProps {
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   ${({ withStyleReset }) => css`
-    :root {
-      ${withStyleReset && STYLE_RESET}
-    `}
-`;
+    ${withStyleReset && STYLE_RESET}
+  `}`;

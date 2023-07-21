@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ColorProp } from "./types";
+import { Variant } from "./types";
 
 const commonStyles = css`
   top: 0;
@@ -42,11 +42,11 @@ export const Shadow = styled.span`
   }
 `;
 
-export const Edge = styled.span<{ color?: ColorProp }>`
-  ${({ color }) => css`
+export const Edge = styled.span<{ variant: Variant }>`
+  ${({ theme, variant }) => css`
     ${commonStyles};
     position: absolute;
-    background: ${color?.background};
+    background: ${theme.palette[variant]};
   `}
 `;
 
@@ -62,16 +62,16 @@ export const EdgeShadow = styled.span`
   );
 `;
 
-export const Front = styled.span<{ color?: ColorProp }>`
-  ${({ color }) => css`
+export const Front = styled.span<{ variant: Variant }>`
+  ${({ theme, variant }) => css`
     ${commonStyles};
     font-family: "ezramedium";
-    color: ${color?.text};
+    color: ${theme[variant]};
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background: ${color?.background};
+    background: ${theme[variant]};
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);

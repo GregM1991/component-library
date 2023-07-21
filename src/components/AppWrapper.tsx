@@ -1,22 +1,21 @@
 import { FC } from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "./ThemeProvider";
 import { GlobalStyle } from "./GlobalStyle";
-import { theme as customTheme } from './theme';
-import { Steps, Spaces } from "./types";
+import { theme } from "./theme";
 
 export interface WithChildren<T = React.ReactNode> {
   withStyleReset?: boolean;
-  steps?: Steps;
-  spaces?: Spaces;
   children?: T;
-  theme?: any;
+  customTheme?: any;
 }
 
-export const AppWrapper: FC<WithChildren> = ({withStyleReset = true, steps, spaces, children, theme }) => (
+export const AppWrapper: FC<WithChildren> = ({
+  withStyleReset = true,
+  children,
+  customTheme = theme,
+}) => (
   <>
-    <GlobalStyle withStyleReset={withStyleReset} steps={steps} spaces={spaces}/>
-    <ThemeProvider theme={theme ? theme : customTheme}>
-      {children}
-    </ThemeProvider>
+    <GlobalStyle withStyleReset={withStyleReset} />
+    <ThemeProvider customTheme={customTheme}>{children}</ThemeProvider>
   </>
 );
