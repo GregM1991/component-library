@@ -1,10 +1,19 @@
+import {
+  Breakpoints,
+  Palette,
+  Radii,
+  Shadows,
+  Spaces,
+  Typography,
+} from "./types";
+
 export interface DefaultTheme {
-  palette: { [key: string]: string };
-  shadows: { [key: string]: string };
-  typography: { [key: string]: string };
-  radii: { [key: string]: string };
-  breakpoints: { [key: string]: string };
-  spaces: { [key: string]: string };
+  palette: Palette;
+  shadows: Shadows;
+  typography: Typography;
+  radii: Radii;
+  breakpoints: Breakpoints;
+  spaces: Spaces;
 }
 
 const palette = {
