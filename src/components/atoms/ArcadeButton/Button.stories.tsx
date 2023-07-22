@@ -21,6 +21,28 @@ export default meta;
 type Story = StoryObj<typeof ArcadeButton>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const PrimarySmall: Story = {
+  render: () => (
+    <ArcadeButton
+      label="Hello"
+      variant="primary"
+      size="small"
+      onClick={() => console.log("button clicked")}
+    />
+  ),
+};
+
+export const SecondarySmall: Story = {
+  render: () => (
+    <ArcadeButton
+      label="Hello"
+      variant="secondary"
+      size="small"
+      onClick={() => console.log("button clicked")}
+    />
+  ),
+};
+
 export const Primary: Story = {
   render: () => (
     <ArcadeButton label="Hello" onClick={() => console.log("button clicked")} />
@@ -32,6 +54,28 @@ export const Secondary: Story = {
     <ArcadeButton
       label="Hello"
       variant="secondary"
+      onClick={() => console.log("button clicked")}
+    />
+  ),
+};
+
+export const PrimaryLarge: Story = {
+  render: () => (
+    <ArcadeButton
+      label="Hello"
+      variant="primary"
+      size="large"
+      onClick={() => console.log("button clicked")}
+    />
+  ),
+};
+
+export const SecondaryLarge: Story = {
+  render: () => (
+    <ArcadeButton
+      label="Hello"
+      variant="secondary"
+      size="large"
       onClick={() => console.log("button clicked")}
     />
   ),

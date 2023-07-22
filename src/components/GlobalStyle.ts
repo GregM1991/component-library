@@ -6,5 +6,9 @@ export interface GlobalStyleProps {
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   ${({ withStyleReset }) => css`
+    html {
+      font-family: "Gill Sans", sans-serif;
+    }
+
     ${withStyleReset && STYLE_RESET}
   `}`;
